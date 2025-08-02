@@ -1,0 +1,9 @@
+{
+	"id": "kanline",
+	"name": "KanLine",
+	"version": "0.0.1",
+	"minAppVersion": "0.13.0",
+	"description": "Kanban + Pipeline",
+	"author": "Dmitry Zudochkin",
+	"isDesktopOnly": false
+}

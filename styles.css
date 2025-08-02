@@ -1,0 +1,631 @@
+/* KanLine Plugin Styles */
+
+.kanline-plugin {
+  padding: 16px;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Board Manager */
+.board-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.board-header h2 {
+  margin: 0;
+  color: var(--text-normal);
+}
+
+.create-board-btn {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.create-board-btn:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.no-boards {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+}
+
+.board-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.board-selector label {
+  color: var(--text-normal);
+  font-weight: 500;
+}
+
+.board-selector select {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.delete-board-btn {
+  background: var(--background-modifier-error);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-board-btn:hover {
+  background: var(--background-modifier-error-hover);
+}
+
+/* Kanban Board */
+.kanban-board {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kanban-board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.kanban-board-header h3 {
+  margin: 0;
+  color: var(--text-normal);
+}
+
+.board-stats {
+  display: flex;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.kanban-board-empty,
+.kanban-board-loading,
+.kanban-board-error {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+}
+
+.kanban-board-error {
+  color: var(--text-error);
+}
+
+/* Columns */
+.columns-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.column {
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  position: relative;
+}
+
+.column-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.column-header-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.column-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-title {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+.note-count {
+  background: var(--background-modifier-border);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.column-tag {
+  color: var(--text-accent);
+  font-size: 12px;
+  font-family: var(--font-monospace);
+}
+
+.column-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-notes {
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-column {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-message p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.empty-message small {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.column-footer {
+  padding: 8px 16px;
+  border-top: 1px solid var(--background-modifier-border);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.column-footer small {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* Note Cards */
+.note-card {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.note-card:hover {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.note-card-compact {
+  padding: 8px;
+}
+
+.note-card-expanded {
+  padding: 16px;
+}
+
+.note-card-header {
+  margin-bottom: 8px;
+}
+
+.note-title {
+  font-weight: 600;
+  color: var(--text-normal);
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.note-card-body {
+  margin-bottom: 8px;
+}
+
+.note-path {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-monospace);
+  margin-bottom: 4px;
+}
+
+.note-date {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.note-card-footer {
+  margin-top: 8px;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background: var(--tag-background);
+  color: var(--tag-color);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-family: var(--font-monospace);
+}
+
+.tag-more {
+  background: var(--background-modifier-border);
+  color: var(--text-muted);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.note-card-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.note-card:hover .note-card-actions {
+  opacity: 1;
+}
+
+.note-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.note-action-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Modal Styles - Plugin specific */
+.kanline-plugin .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.kanline-plugin .modal-content {
+  background: var(--background-primary);
+  border-radius: 8px;
+  min-width: 400px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.kanline-plugin .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.kanline-plugin .modal-header h3 {
+  margin: 0;
+  color: var(--text-normal);
+}
+
+.kanline-plugin .modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-muted);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.kanline-plugin .modal-close:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.kanline-plugin .modal-body {
+  padding: 20px;
+}
+
+.kanline-plugin .form-group {
+  margin-bottom: 16px;
+}
+
+.kanline-plugin .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-normal);
+  font-weight: 500;
+}
+
+.kanline-plugin .form-group input,
+.kanline-plugin .form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 14px;
+  font-family: var(--font-interface);
+}
+
+.kanline-plugin .form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.kanline-plugin .form-group input:focus,
+.kanline-plugin .form-group textarea:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.kanline-plugin .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.kanline-plugin .btn-primary {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.kanline-plugin .btn-primary:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.kanline-plugin .btn-secondary {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.kanline-plugin .btn-secondary:hover {
+  background: var(--background-modifier-hover);
+}
+
+.kanline-plugin .btn-danger {
+  background: var(--background-modifier-error);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.kanline-plugin .btn-danger:hover {
+  background: var(--background-modifier-error-hover);
+}
+
+/* Auto Refresh Indicator */
+.auto-refresh-indicator {
+  color: var(--text-accent);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: pulse 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.auto-refresh-indicator.refreshing {
+  animation: spin 1s linear infinite;
+}
+
+.refresh-status {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Drag and Drop Styles */
+.note-card.dragging {
+  opacity: 0.5;
+  transform: rotate(2deg);
+  cursor: grabbing;
+}
+
+.note-card[draggable="true"] {
+  cursor: grab;
+}
+
+.note-card[draggable="true"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.column.drag-over {
+  background: var(--background-modifier-hover);
+  border: 2px dashed var(--interactive-accent);
+  border-radius: 8px;
+}
+
+.column.drag-over .column-header {
+  color: var(--interactive-accent);
+}
+
+.column.drag-over .column-title {
+  color: var(--interactive-accent);
+}
+
+/* Drop zone visual feedback */
+.column.drag-over::before {
+  content: 'Drop here';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--interactive-accent);
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 0 4px var(--background-primary);
+}
+
+/* Column editing styles */
+.column-edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--text-muted);
+}
+
+.column:hover .column-edit-btn {
+  opacity: 1;
+}
+
+.column-edit-btn:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.kanline-plugin .form-help {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-top: 4px;
+  display: block;
+}
+
+.kanline-plugin .color-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.kanline-plugin .color-input-group input[type="color"] {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+}
+
+.kanline-plugin .color-text-input {
+  flex: 1;
+  font-family: var(--font-monospace);
+}
+
+/* Dataview Error Banner */
+.dataview-error-banner {
+  background: var(--background-modifier-error);
+  border: 1px solid var(--background-modifier-error-hover);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.error-message {
+  color: var(--text-error);
+  font-size: 14px;
+  line-height: 1.4;
+}
